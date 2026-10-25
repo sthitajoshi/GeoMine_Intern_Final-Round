@@ -10,11 +10,13 @@ The headline numbers in this README come from the spatial split. Random-split nu
 
 | Command | What it does | Time (8-thread CPU laptop) |
 |---|---|---|
-| `pip install -r requirements.txt` | dependencies (CPU torch) | 2–4 min |
-| `python run_app.py` | downloads data if missing (130 MB), starts the app at http://localhost:8501 | 1–3 min first time |
+| `pip install -r requirements.txt` | dependencies (CPU torch) | 5.4 min measured (fresh venv, clean clone) |
+| `python run_app.py` | downloads data if missing (132 MB), starts the app at http://localhost:8501 | app starts in 5 s once data is present; the first download took ~15 min on our network (see note) |
 | `python scripts/reproduce_all.py` | every number, map and figure in the report, then the tests | ~90 min: main 3-seed run 32 min, band study 35 min (permutation importance), 30-px ablation 35 min, rest ~5 min |
 | `python scripts/reproduce_all.py --quick` | seed 0 only, smoke test | ~12 min |
 | `python -m pytest -q tests` | unit and leakage tests | ~30 s |
+
+**Clean-clone test (25 Oct 2026, Windows 11, 8-thread CPU):** fresh `git clone` → new venv → `pip install -r requirements.txt` (5.4 min) → `python run_app.py` → app served and full-scene CNN inference rendered; `pytest` 25/25 passed in the clone. The ≤10 min target was **not** met end-to-end on this network, because the data download took ~15 min: EHU and USGS refuse scripted clients from our network, and the Internet Archive fallback rate-limits bursts (the script backs off and resumes; re-running skips finished files). On a network where EHU serves directly, the download is the 132 MB transfer only. To save time, `data/raw/` can also be copied in from another machine.
 
 Trained models (`models/`, about 10 MB) and the Cuprite mapping results (`experiments/mineral/`) are committed. That way the app runs from a clean clone without retraining.
 
