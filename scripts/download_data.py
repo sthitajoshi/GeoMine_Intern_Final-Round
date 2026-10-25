@@ -85,18 +85,24 @@ def _get(url: str, timeout: int = 600) -> bytes:
         return r.read()
 
 
+_DEAD_HOSTS: set[str] = set()  # live hosts that already refused us: skip straight to the archive
+
+
 def fetch(url: str, dest: Path, sha256: str | None = None, archive_ts: str = "2020") -> str:
-    """Try the original URL, then the Internet Archive raw capture. Returns the URL used."""
+    """Try the original URL (short timeout, once per host), then the Internet Archive raw capture.
+    Returns the URL used."""
     if dest.exists() and (sha256 is None or _sha(dest) == sha256):
         return "cached"
     dest.parent.mkdir(parents=True, exist_ok=True)
     quoted = urllib.parse.quote(url, safe=":/")
-    candidates = [quoted, f"https://web.archive.org/web/{archive_ts}id_/{quoted}"]
+    host = urllib.parse.urlparse(url).netloc
+    candidates = [] if host in _DEAD_HOSTS else [(quoted, 20, 1)]
+    candidates.append((f"https://web.archive.org/web/{archive_ts}id_/{quoted}", 600, 3))
     last = None
-    for u in candidates:
-        for attempt in range(3):
+    for u, timeout, attempts in candidates:
+        for attempt in range(attempts):
             try:
-                data = _get(u)
+                data = _get(u, timeout)
                 if data[:15].lower().startswith(b"<!doctype html") or data[:6].lower() == b"<html>":
                     raise IOError("got an HTML page instead of data")
                 dest.write_bytes(data)
@@ -106,6 +112,9 @@ def fetch(url: str, dest: Path, sha256: str | None = None, archive_ts: str = "20
                 return u
             except Exception as e:  # noqa: BLE001 - report and try the next source
                 last = f"{u}: {e}"
+                if u == quoted:
+                    _DEAD_HOSTS.add(host)
+                    break
                 time.sleep(2 * (attempt + 1))
     raise RuntimeError(f"all sources failed for {dest.name}; last error {last}")
 
