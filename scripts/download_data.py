@@ -97,7 +97,7 @@ def fetch(url: str, dest: Path, sha256: str | None = None, archive_ts: str = "20
     quoted = urllib.parse.quote(url, safe=":/")
     host = urllib.parse.urlparse(url).netloc
     candidates = [] if host in _DEAD_HOSTS else [(quoted, 20, 1)]
-    candidates.append((f"https://web.archive.org/web/{archive_ts}id_/{quoted}", 600, 3))
+    candidates.append((f"https://web.archive.org/web/{archive_ts}id_/{quoted}", 600, 5))
     last = None
     for u, timeout, attempts in candidates:
         for attempt in range(attempts):
@@ -115,7 +115,7 @@ def fetch(url: str, dest: Path, sha256: str | None = None, archive_ts: str = "20
                 if u == quoted:
                     _DEAD_HOSTS.add(host)
                     break
-                time.sleep(2 * (attempt + 1))
+                time.sleep(5 * 2 ** attempt)   # archive.org rate-limits bursts: back off 5, 10, 20, 40 s
     raise RuntimeError(f"all sources failed for {dest.name}; last error {last}")
 
 
