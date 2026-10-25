@@ -1,0 +1,921 @@
+{
+ "wavelength_source": "splib07 AVIRIS-Classic 1998 table used as proxy for the 1997 flight",
+ "wavelength_exact": false,
+ "usable_bands": 186,
+ "cr_window_nm": [
+  2000,
+  2450
+ ],
+ "n_cr_bands": 45,
+ "records": {
+  "alunite": [
+   "Alunite_GDS84_Na03_BECKa_AREF",
+   "Alunite_HS295_ASDFRa_AREF"
+  ],
+  "kaolinite": [
+   "Kaolinite_CM9_BECKb_AREF",
+   "Kaolinite_KGa-1_(wxl)_BECKb_AREF"
+  ],
+  "muscovite": [
+   "Muscovite_GDS107_BECKa_AREF"
+  ],
+  "buddingtonite": [
+   "Buddingtonite_NHB2301_BECKb_AREF"
+  ],
+  "calcite": [
+   "Calcite_WS272_BECKa_AREF"
+  ],
+  "chalcedony": [
+   "Chalcedony_CU91-6A_ASDNGa_AREF"
+  ],
+  "montmorillonite": [
+   "Montmorillonite_SWy-1_BECKb_AREF"
+  ],
+  "hematite": [
+   "Hematite_GDS27_BECKa_AREF"
+  ],
+  "jarosite": [
+   "Jarosite_GDS99_K_200C_Syn_BECKa_AREF"
+  ],
+  "dickite": [
+   "Dickite_NMNH106242_BECKb_AREF"
+  ],
+  "opal": [
+   "Opal_WS732_BECKa_AREF"
+  ]
+ },
+ "convolution_check": {
+  "alunite": {
+   "rms_diff_reflectance": 0.0033778694533287087,
+   "max_abs_diff": 0.012866125971649267
+  },
+  "kaolinite": {
+   "rms_diff_reflectance": 0.004042645142143242,
+   "max_abs_diff": 0.013837001653986436
+  },
+  "muscovite": {
+   "rms_diff_reflectance": 0.002672436387384496,
+   "max_abs_diff": 0.008180460377483267
+  },
+  "buddingtonite": {
+   "rms_diff_reflectance": 0.000856472891972062,
+   "max_abs_diff": 0.002563026304736371
+  },
+  "calcite": {
+   "rms_diff_reflectance": 0.005593335916767563,
+   "max_abs_diff": 0.02906107014402093
+  },
+  "chalcedony": {
+   "rms_diff_reflectance": 5.311689239293888e-05,
+   "max_abs_diff": 0.00014437570888392592
+  },
+  "montmorillonite": {
+   "rms_diff_reflectance": 0.0018315867093659937,
+   "max_abs_diff": 0.006342190207620446
+  },
+  "hematite": {
+   "rms_diff_reflectance": 0.0007518502929124741,
+   "max_abs_diff": 0.0035983397970683617
+  },
+  "jarosite": {
+   "rms_diff_reflectance": 0.0042455596004818425,
+   "max_abs_diff": 0.013918068461895139
+  },
+  "dickite": {
+   "rms_diff_reflectance": 0.005175971444898846,
+   "max_abs_diff": 0.01887193498033446
+  },
+  "opal": {
+   "rms_diff_reflectance": 0.0005106940583714138,
+   "max_abs_diff": 0.0010987180863753637
+  }
+ },
+ "snr_window_median": 73.77845501439381,
+ "sigma_window_median": 0.0040607286554141375,
+ "library_angle_between_targets_rad": {
+  "alunite": {
+   "alunite": 1.700757204411929e-06,
+   "kaolinite": 0.41685066011016464,
+   "muscovite": 0.7686495820434961,
+   "buddingtonite": 0.5607513149471085,
+   "calcite": 1.2820001104832277,
+   "chalcedony": 1.055403752622849
+  },
+  "kaolinite": {
+   "alunite": 0.41685066011016464,
+   "kaolinite": 2.0070154902108617e-06,
+   "muscovite": 0.5384626745002575,
+   "buddingtonite": 0.7301807053565799,
+   "calcite": 1.1463181609873678,
+   "chalcedony": 0.8179522367350234
+  },
+  "muscovite": {
+   "alunite": 0.7686495820434961,
+   "kaolinite": 0.5384626745002575,
+   "muscovite": 2.094289158899923e-06,
+   "buddingtonite": 0.966145502190546,
+   "calcite": 1.145598901597452,
+   "chalcedony": 0.7113118949643219
+  },
+  "buddingtonite": {
+   "alunite": 0.5607513149471085,
+   "kaolinite": 0.7301807053565799,
+   "muscovite": 0.966145502190546,
+   "buddingtonite": 2.7037704281153864e-06,
+   "calcite": 1.4029807416248985,
+   "chalcedony": 1.1049590455996436
+  },
+  "calcite": {
+   "alunite": 1.2820001104832277,
+   "kaolinite": 1.1463181609873678,
+   "muscovite": 1.145598901597452,
+   "buddingtonite": 1.4029807416248985,
+   "calcite": 2.2158683058135984e-06,
+   "chalcedony": 1.0132131077319442
+  },
+  "chalcedony": {
+   "alunite": 1.055403752622849,
+   "kaolinite": 0.8179522367350234,
+   "muscovite": 0.7113118949643219,
+   "buddingtonite": 1.1049590455996436,
+   "calcite": 1.0132131077319442,
+   "chalcedony": 3.424350388920848e-06
+  }
+ },
+ "sam_threshold_rad": 0.35,
+ "sam_threshold_sweep_synthetic": [
+  {
+   "thr": 0.15,
+   "synthetic_macro_f1": 0.6151283941765529
+  },
+  {
+   "thr": 0.2,
+   "synthetic_macro_f1": 0.7494100697197409
+  },
+  {
+   "thr": 0.25,
+   "synthetic_macro_f1": 0.8219618623061782
+  },
+  {
+   "thr": 0.3,
+   "synthetic_macro_f1": 0.8667257521983635
+  },
+  {
+   "thr": 0.35,
+   "synthetic_macro_f1": 0.889948465628626
+  },
+  {
+   "thr": 0.4,
+   "synthetic_macro_f1": 0.9044295877121892
+  },
+  {
+   "thr": 0.5,
+   "synthetic_macro_f1": 0.9246928374597491
+  },
+  {
+   "thr": 0.6,
+   "synthetic_macro_f1": 0.9311101303998559
+  }
+ ],
+ "min_band_depth": 0.02,
+ "sam_synthetic": {
+  "macro_f1": 0.8886162242679171,
+  "oa": 0.8823214285714286,
+  "confusion": [
+   [
+    781,
+    0,
+    0,
+    0,
+    0,
+    0,
+    19
+   ],
+   [
+    0,
+    770,
+    0,
+    0,
+    0,
+    0,
+    30
+   ],
+   [
+    0,
+    0,
+    775,
+    0,
+    0,
+    0,
+    25
+   ],
+   [
+    0,
+    0,
+    0,
+    670,
+    0,
+    0,
+    130
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    730,
+    0,
+    70
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    560,
+    240
+   ],
+   [
+    4,
+    67,
+    51,
+    0,
+    4,
+    19,
+    655
+   ]
+  ]
+ },
+ "ml_synthetic": {
+  "macro_f1": 0.9840573763785395,
+  "oa": 0.9841071428571428,
+  "confusion": [
+   [
+    795,
+    1,
+    0,
+    0,
+    0,
+    0,
+    4
+   ],
+   [
+    0,
+    797,
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   [
+    0,
+    1,
+    794,
+    0,
+    0,
+    0,
+    5
+   ],
+   [
+    0,
+    0,
+    0,
+    790,
+    0,
+    0,
+    10
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    797,
+    1,
+    2
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    789,
+    11
+   ],
+   [
+    4,
+    5,
+    2,
+    11,
+    6,
+    23,
+    749
+   ]
+  ],
+  "per_class_f1": [
+   0.9943714821763602,
+   0.9937655860349127,
+   0.9949874686716792,
+   0.9868831980012492,
+   0.9943855271366189,
+   0.9783013019218847,
+   0.9457070707070707
+  ]
+ },
+ "ml_detection_vs_fraction": [
+  {
+   "frac": "0.30-0.45",
+   "recall": 0.9668292682926829
+  },
+  {
+   "frac": "0.45-0.60",
+   "recall": 0.9990205680705191
+  },
+  {
+   "frac": "0.60-0.80",
+   "recall": 0.9978601997146933
+  },
+  {
+   "frac": "0.80-1.00",
+   "recall": 1.0
+  }
+ ],
+ "ml_noise_robustness": [
+  {
+   "noise_x": 0.5,
+   "oa": 0.9860714285714286,
+   "macro_f1": 0.985929933102819
+  },
+  {
+   "noise_x": 2.0,
+   "oa": 0.9421428571428572,
+   "macro_f1": 0.9442711151715046
+  },
+  {
+   "noise_x": 3.0,
+   "oa": 0.8678571428571429,
+   "macro_f1": 0.8762772041330708
+  }
+ ],
+ "agreement": {
+  "overall_agreement": 0.8534710912052117,
+  "cohen_kappa_sam_vs_ml": 0.3777825298156773,
+  "confusion_sam_rows_ml_cols": [
+   [
+    4100,
+    27,
+    0,
+    2,
+    0,
+    0,
+    810
+   ],
+   [
+    57,
+    157,
+    0,
+    0,
+    0,
+    0,
+    273
+   ],
+   [
+    0,
+    6,
+    3596,
+    0,
+    0,
+    0,
+    204
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    8215,
+    0,
+    2
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    133,
+    0
+   ],
+   [
+    3559,
+    5013,
+    8941,
+    189,
+    23662,
+    3319,
+    252103
+   ]
+  ],
+  "labels": [
+   "alunite",
+   "kaolinite",
+   "muscovite",
+   "buddingtonite",
+   "calcite",
+   "chalcedony",
+   "unknown"
+  ],
+  "agreement_where_sam_mapped": 0.9214537595267888
+ },
+ "pixel_counts": {
+  "sam": {
+   "alunite": 4939,
+   "kaolinite": 487,
+   "muscovite": 3806,
+   "buddingtonite": 0,
+   "calcite": 8217,
+   "chalcedony": 133,
+   "unknown": 296786
+  },
+  "ml": {
+   "alunite": 7716,
+   "kaolinite": 5203,
+   "muscovite": 12537,
+   "buddingtonite": 191,
+   "calcite": 31877,
+   "chalcedony": 3452,
+   "unknown": 253392
+  }
+ },
+ "sensitivity": [
+  {
+   "thr": 0.234,
+   "min_depth": 0.01,
+   "frac_mapped": 0.008820872353420195,
+   "per_class_px": {
+    "alunite": 230,
+    "kaolinite": 0,
+    "muscovite": 119,
+    "buddingtonite": 0,
+    "calcite": 2410,
+    "chalcedony": 14
+   },
+   "agreement_with_default": 0.9528927880700325
+  },
+  {
+   "thr": 0.234,
+   "min_depth": 0.02,
+   "frac_mapped": 0.008820872353420195,
+   "per_class_px": {
+    "alunite": 230,
+    "kaolinite": 0,
+    "muscovite": 119,
+    "buddingtonite": 0,
+    "calcite": 2410,
+    "chalcedony": 14
+   },
+   "agreement_with_default": 0.9528927880700325
+  },
+  {
+   "thr": 0.234,
+   "min_depth": 0.04,
+   "frac_mapped": 0.008820872353420195,
+   "per_class_px": {
+    "alunite": 230,
+    "kaolinite": 0,
+    "muscovite": 119,
+    "buddingtonite": 0,
+    "calcite": 2410,
+    "chalcedony": 14
+   },
+   "agreement_with_default": 0.9528927880700325
+  },
+  {
+   "thr": 0.35,
+   "min_depth": 0.01,
+   "frac_mapped": 0.05592808428338762,
+   "per_class_px": {
+    "alunite": 4939,
+    "kaolinite": 487,
+    "muscovite": 3806,
+    "buddingtonite": 0,
+    "calcite": 8217,
+    "chalcedony": 133
+   },
+   "agreement_with_default": 1.0
+  },
+  {
+   "thr": 0.35,
+   "min_depth": 0.02,
+   "frac_mapped": 0.05592808428338762,
+   "per_class_px": {
+    "alunite": 4939,
+    "kaolinite": 487,
+    "muscovite": 3806,
+    "buddingtonite": 0,
+    "calcite": 8217,
+    "chalcedony": 133
+   },
+   "agreement_with_default": 1.0
+  },
+  {
+   "thr": 0.35,
+   "min_depth": 0.04,
+   "frac_mapped": 0.05592808428338762,
+   "per_class_px": {
+    "alunite": 4939,
+    "kaolinite": 487,
+    "muscovite": 3806,
+    "buddingtonite": 0,
+    "calcite": 8217,
+    "chalcedony": 133
+   },
+   "agreement_with_default": 1.0
+  },
+  {
+   "thr": 0.465,
+   "min_depth": 0.01,
+   "frac_mapped": 0.14348470582247558,
+   "per_class_px": {
+    "alunite": 11500,
+    "kaolinite": 3033,
+    "muscovite": 13850,
+    "buddingtonite": 19,
+    "calcite": 16191,
+    "chalcedony": 514
+   },
+   "agreement_with_default": 0.9124433784609121
+  },
+  {
+   "thr": 0.465,
+   "min_depth": 0.02,
+   "frac_mapped": 0.14348470582247558,
+   "per_class_px": {
+    "alunite": 11500,
+    "kaolinite": 3033,
+    "muscovite": 13850,
+    "buddingtonite": 19,
+    "calcite": 16191,
+    "chalcedony": 514
+   },
+   "agreement_with_default": 0.9124433784609121
+  },
+  {
+   "thr": 0.465,
+   "min_depth": 0.04,
+   "frac_mapped": 0.1434401720276873,
+   "per_class_px": {
+    "alunite": 11492,
+    "kaolinite": 3030,
+    "muscovite": 13847,
+    "buddingtonite": 19,
+    "calcite": 16191,
+    "chalcedony": 514
+   },
+   "agreement_with_default": 0.9124879122557004
+  }
+ ],
+ "examples": {
+  "alunite": {
+   "pixels_rc": [
+    [
+     137,
+     543
+    ],
+    [
+     142,
+     544
+    ],
+    [
+     144,
+     575
+    ],
+    [
+     144,
+     541
+    ],
+    [
+     124,
+     530
+    ]
+   ],
+   "ml_conf": [
+    0.9998693466186523,
+    0.9998399019241333,
+    0.9998008608818054,
+    0.9997818470001221,
+    0.9997727274894714
+   ],
+   "sam_angle": [
+    0.3358583152294159,
+    0.18893089890480042,
+    0.2906004786491394,
+    0.2980487644672394,
+    0.20583397150039673
+   ],
+   "fit_rms": [
+    0.021119842305779457,
+    0.01012598630040884,
+    0.015869872644543648,
+    0.014464733190834522,
+    0.008800695650279522
+   ]
+  },
+  "kaolinite": {
+   "pixels_rc": [
+    [
+     474,
+     197
+    ],
+    [
+     464,
+     171
+    ],
+    [
+     452,
+     149
+    ],
+    [
+     237,
+     185
+    ],
+    [
+     304,
+     163
+    ]
+   ],
+   "ml_conf": [
+    0.9997942447662354,
+    0.9990434050559998,
+    0.9987080693244934,
+    0.9983285665512085,
+    0.997643232345581
+   ],
+   "sam_angle": [
+    0.3420891761779785,
+    0.32452166080474854,
+    0.33885458111763,
+    0.3144325017929077,
+    0.3092281222343445
+   ],
+   "fit_rms": [
+    0.014828969724476337,
+    0.015208152122795582,
+    0.015718618407845497,
+    0.014557802118360996,
+    0.01566077582538128
+   ]
+  },
+  "muscovite": {
+   "pixels_rc": [
+    [
+     464,
+     139
+    ],
+    [
+     460,
+     135
+    ],
+    [
+     460,
+     137
+    ],
+    [
+     460,
+     136
+    ],
+    [
+     459,
+     136
+    ]
+   ],
+   "ml_conf": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "sam_angle": [
+    0.23520930111408234,
+    0.2181449681520462,
+    0.23422887921333313,
+    0.17659997940063477,
+    0.2306564301252365
+   ],
+   "fit_rms": [
+    0.01687207818031311,
+    0.014787431806325912,
+    0.02058582380414009,
+    0.011512582190334797,
+    0.014022422023117542
+   ]
+  },
+  "buddingtonite": {
+   "pixels_rc": [
+    [
+     57,
+     133
+    ],
+    [
+     55,
+     136
+    ],
+    [
+     17,
+     178
+    ],
+    [
+     59,
+     137
+    ],
+    [
+     145,
+     233
+    ]
+   ],
+   "ml_conf": [
+    0.9926059246063232,
+    0.9826633930206299,
+    0.9723670482635498,
+    0.9709808230400085,
+    0.9663584232330322
+   ],
+   "sam_angle": [
+    0.6624272465705872,
+    0.6741385459899902,
+    0.6056784987449646,
+    0.6071197390556335,
+    0.6241366863250732
+   ],
+   "fit_rms": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+   ]
+  },
+  "calcite": {
+   "pixels_rc": [
+    [
+     273,
+     181
+    ],
+    [
+     274,
+     182
+    ],
+    [
+     278,
+     181
+    ],
+    [
+     275,
+     181
+    ],
+    [
+     276,
+     179
+    ]
+   ],
+   "ml_conf": [
+    0.9999991059303284,
+    0.9999988675117493,
+    0.9999986886978149,
+    0.9999985098838806,
+    0.9999984502792358
+   ],
+   "sam_angle": [
+    0.08764535188674927,
+    0.09625665098428726,
+    0.11819256097078323,
+    0.10001964867115021,
+    0.09686186909675598
+   ],
+   "fit_rms": [
+    0.012367170304059982,
+    0.013355178758502007,
+    0.014321689493954182,
+    0.013281690888106823,
+    0.01298107672482729
+   ]
+  },
+  "chalcedony": {
+   "pixels_rc": [
+    [
+     493,
+     174
+    ],
+    [
+     494,
+     157
+    ],
+    [
+     494,
+     158
+    ],
+    [
+     493,
+     176
+    ],
+    [
+     484,
+     214
+    ]
+   ],
+   "ml_conf": [
+    0.9999994039535522,
+    0.9999992251396179,
+    0.9999979734420776,
+    0.9999970197677612,
+    0.9999967217445374
+   ],
+   "sam_angle": [
+    0.19961242377758026,
+    0.2017664760351181,
+    0.19212011992931366,
+    0.20302921533584595,
+    0.2219773828983307
+   ],
+   "fit_rms": [
+    0.010054693557322025,
+    0.011780623346567154,
+    0.013114978559315205,
+    0.0082900021225214,
+    0.007859696634113789
+   ]
+  }
+ },
+ "residuals": {
+  "alunite": {
+   "median_fit_rms": 0.011025938205420971,
+   "median_r2": 0.8012650012969971,
+   "median_depth": 0.08703434467315674,
+   "median_position_nm": 2168.7996
+  },
+  "kaolinite": {
+   "median_fit_rms": 0.010023318231105804,
+   "median_r2": 0.8061944842338562,
+   "median_depth": 0.07643550634384155,
+   "median_position_nm": 2178.7996000000003
+  },
+  "muscovite": {
+   "median_fit_rms": 0.012819254770874977,
+   "median_r2": 0.8364545106887817,
+   "median_depth": 0.13721832633018494,
+   "median_position_nm": 2208.6999
+  },
+  "buddingtonite": {
+   "median_fit_rms": null,
+   "median_r2": null,
+   "median_depth": null,
+   "median_position_nm": null
+  },
+  "calcite": {
+   "median_fit_rms": 0.013973756693303585,
+   "median_r2": 0.8804992437362671,
+   "median_depth": 0.15285056829452515,
+   "median_position_nm": 2338.3999000000003
+  },
+  "chalcedony": {
+   "median_fit_rms": 0.011155856773257256,
+   "median_r2": 0.8295075297355652,
+   "median_depth": 0.07870244979858398,
+   "median_position_nm": 2228.6999
+  }
+ },
+ "best_variant_counts": {
+  "alunite": [
+   3872,
+   1067
+  ],
+  "kaolinite": [
+   349,
+   138
+  ],
+  "muscovite": [
+   3806
+  ],
+  "calcite": [
+   8217
+  ],
+  "chalcedony": [
+   133
+  ]
+ },
+ "n_valid_pixels": 314368,
+ "runtime_s": 32.70167112350464
+}

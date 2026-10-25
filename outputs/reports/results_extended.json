@@ -1,0 +1,374 @@
+[
+ {
+  "scene": "indian_pines",
+  "split": "random",
+  "model": "svm",
+  "oa_mean": 0.8011,
+  "oa_std": 0.0049,
+  "aa_mean": 0.656,
+  "aa_std": 0.0055,
+  "kappa_mean": 0.7714,
+  "kappa_std": 0.0053,
+  "macro_f1_mean": 0.6697,
+  "macro_f1_std": 0.0041,
+  "ece_mean": 0.1087,
+  "ece_std": 0.007,
+  "train_time_s_mean": 1.2,
+  "inference_time_s_mean": 1.36,
+  "n_train_px_per_seed": [
+   1025,
+   1025,
+   1025
+  ],
+  "n_test_px_per_seed": [
+   9224,
+   9224,
+   9224
+  ],
+  "hyperparams_per_seed": [
+   {
+    "C": 1000,
+    "gamma": 0.005
+   },
+   {
+    "C": 1000,
+    "gamma": 0.001
+   },
+   {
+    "C": 100,
+    "gamma": 0.001
+   }
+  ]
+ },
+ {
+  "scene": "indian_pines",
+  "split": "spatial",
+  "model": "svm",
+  "oa_mean": 0.6364,
+  "oa_std": 0.0415,
+  "aa_mean": 0.6822,
+  "aa_std": 0.0373,
+  "kappa_mean": 0.5781,
+  "kappa_std": 0.0293,
+  "macro_f1_mean": 0.6197,
+  "macro_f1_std": 0.0738,
+  "ece_mean": 0.1198,
+  "ece_std": 0.0299,
+  "train_time_s_mean": 20.7,
+  "inference_time_s_mean": 0.64,
+  "n_train_px_per_seed": [
+   4643,
+   4616,
+   4764
+  ],
+  "n_test_px_per_seed": [
+   1832,
+   1541,
+   1543
+  ],
+  "hyperparams_per_seed": [
+   {
+    "C": 1000,
+    "gamma": 0.001
+   },
+   {
+    "C": 100,
+    "gamma": 0.001
+   },
+   {
+    "C": 100,
+    "gamma": 0.005
+   }
+  ]
+ },
+ {
+  "scene": "indian_pines",
+  "split": "spatial",
+  "model": "cnn3d",
+  "oa_mean": 0.6164,
+  "oa_std": 0.0352,
+  "aa_mean": 0.619,
+  "aa_std": 0.0275,
+  "kappa_mean": 0.5517,
+  "kappa_std": 0.018,
+  "macro_f1_mean": 0.5616,
+  "macro_f1_std": 0.0544,
+  "ece_mean": 0.2855,
+  "ece_std": 0.0291,
+  "ece_temp_scaled_mean": 0.0761,
+  "ece_temp_scaled_std": 0.0286,
+  "train_time_s_mean": 54.7,
+  "inference_time_s_mean": 0.06,
+  "n_train_px_per_seed": [
+   4643,
+   4616,
+   4764
+  ],
+  "n_test_px_per_seed": [
+   1832,
+   1541,
+   1543
+  ],
+  "hyperparams_per_seed": [
+   {
+    "lr": 0.003,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   },
+   {
+    "lr": 0.001,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   },
+   {
+    "lr": 0.003,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   }
+  ]
+ },
+ {
+  "scene": "salinas",
+  "split": "spatial",
+  "model": "cnn3d",
+  "oa_mean": 0.9688,
+  "oa_std": 0.0235,
+  "aa_mean": 0.9769,
+  "aa_std": 0.0144,
+  "kappa_mean": 0.9649,
+  "kappa_std": 0.027,
+  "macro_f1_mean": 0.9753,
+  "macro_f1_std": 0.0141,
+  "ece_mean": 0.0211,
+  "ece_std": 0.0223,
+  "ece_temp_scaled_mean": 0.012,
+  "ece_temp_scaled_std": 0.0099,
+  "train_time_s_mean": 350.2,
+  "inference_time_s_mean": 0.3,
+  "n_train_px_per_seed": [
+   25542,
+   25579,
+   25795
+  ],
+  "n_test_px_per_seed": [
+   8896,
+   8506,
+   8378
+  ],
+  "hyperparams_per_seed": [
+   {
+    "lr": 0.001,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   },
+   {
+    "lr": 0.001,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   },
+   {
+    "lr": 0.001,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   }
+  ]
+ },
+ {
+  "scene": "indian_pines",
+  "split": "random",
+  "model": "cnn3d",
+  "oa_mean": 0.934,
+  "oa_std": 0.0067,
+  "aa_mean": 0.9082,
+  "aa_std": 0.0153,
+  "kappa_mean": 0.9245,
+  "kappa_std": 0.0077,
+  "macro_f1_mean": 0.9273,
+  "macro_f1_std": 0.0111,
+  "ece_mean": 0.0118,
+  "ece_std": 0.0007,
+  "ece_temp_scaled_mean": 0.0094,
+  "ece_temp_scaled_std": 0.0028,
+  "train_time_s_mean": 14.6,
+  "inference_time_s_mean": 0.3,
+  "n_train_px_per_seed": [
+   1025,
+   1025,
+   1025
+  ],
+  "n_test_px_per_seed": [
+   9224,
+   9224,
+   9224
+  ],
+  "hyperparams_per_seed": [
+   {
+    "lr": 0.001,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   },
+   {
+    "lr": 0.003,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   },
+   {
+    "lr": 0.001,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   }
+  ]
+ },
+ {
+  "scene": "salinas",
+  "split": "random",
+  "model": "cnn3d",
+  "oa_mean": 0.9907,
+  "oa_std": 0.0013,
+  "aa_mean": 0.9947,
+  "aa_std": 0.0008,
+  "kappa_mean": 0.9897,
+  "kappa_std": 0.0014,
+  "macro_f1_mean": 0.9947,
+  "macro_f1_std": 0.001,
+  "ece_mean": 0.0017,
+  "ece_std": 0.0006,
+  "ece_temp_scaled_mean": 0.0013,
+  "ece_temp_scaled_std": 0.0001,
+  "train_time_s_mean": 63.7,
+  "inference_time_s_mean": 1.61,
+  "n_train_px_per_seed": [
+   5415,
+   5415,
+   5415
+  ],
+  "n_test_px_per_seed": [
+   48714,
+   48714,
+   48714
+  ],
+  "hyperparams_per_seed": [
+   {
+    "lr": 0.001,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   },
+   {
+    "lr": 0.003,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   },
+   {
+    "lr": 0.001,
+    "patch": 7,
+    "n_pca": 30,
+    "dropout": 0.4,
+    "weight_decay": 0.0001
+   }
+  ]
+ },
+ {
+  "scene": "salinas",
+  "split": "random",
+  "model": "svm",
+  "oa_mean": 0.9342,
+  "oa_std": 0.0023,
+  "aa_mean": 0.9652,
+  "aa_std": 0.0015,
+  "kappa_mean": 0.9266,
+  "kappa_std": 0.0026,
+  "macro_f1_mean": 0.9666,
+  "macro_f1_std": 0.0013,
+  "ece_mean": 0.0228,
+  "ece_std": 0.0059,
+  "train_time_s_mean": 9.6,
+  "inference_time_s_mean": 14.12,
+  "n_train_px_per_seed": [
+   5415,
+   5415,
+   5415
+  ],
+  "n_test_px_per_seed": [
+   48714,
+   48714,
+   48714
+  ],
+  "hyperparams_per_seed": [
+   {
+    "C": 100,
+    "gamma": 0.02
+   },
+   {
+    "C": 1000,
+    "gamma": 0.001
+   },
+   {
+    "C": 100,
+    "gamma": 0.02
+   }
+  ]
+ },
+ {
+  "scene": "salinas",
+  "split": "spatial",
+  "model": "svm",
+  "oa_mean": 0.9294,
+  "oa_std": 0.0147,
+  "aa_mean": 0.9486,
+  "aa_std": 0.0049,
+  "kappa_mean": 0.9213,
+  "kappa_std": 0.017,
+  "macro_f1_mean": 0.9438,
+  "macro_f1_std": 0.0098,
+  "ece_mean": 0.0146,
+  "ece_std": 0.0024,
+  "train_time_s_mean": 64.5,
+  "inference_time_s_mean": 2.95,
+  "n_train_px_per_seed": [
+   25542,
+   25579,
+   25795
+  ],
+  "n_test_px_per_seed": [
+   8896,
+   8506,
+   8378
+  ],
+  "hyperparams_per_seed": [
+   {
+    "C": 1000,
+    "gamma": 0.005
+   },
+   {
+    "C": 1000,
+    "gamma": 0.005
+   },
+   {
+    "C": 1000,
+    "gamma": 0.02
+   }
+  ]
+ }
+]

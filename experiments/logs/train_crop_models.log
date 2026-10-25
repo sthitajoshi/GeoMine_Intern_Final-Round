@@ -1,0 +1,74 @@
+[12:19:33] ===== 2026-10-25 12:19:33 scripts/train_crop_models.py
+[12:19:33] env {'python': '3.12.10', 'platform': 'Windows-11-10.0.26300-SP0', 'numpy': '2.5.4', 'scipy': '1.18.1', 'sklearn': '1.9.1', 'torch': '2.14.1+cpu', 'cpu_threads': 8}
+[12:19:33] indian_pines_random_s0: train=1025 (fit 819) val=206 test=9224
+[12:19:34]     svm best {'C': 1000, 'gamma': 0.005} val_oa=0.796
+[12:19:35]   indian_pines_random_s0 svm: OA=0.8049 AA=0.6617 k=0.7759 F1=0.6697 ECE=0.1087 (2s)
+[12:19:47]     cnn lr=0.001 stopped ep=70 best_val_score=0.942 (9s)
+[12:19:52]     cnn lr=0.003 stopped ep=46 best_val_score=0.942 (6s)
+[12:19:53]   indian_pines_random_s0 cnn3d: OA=0.9417 AA=0.9159 k=0.9333 F1=0.9343 ECE=0.0124 (18s)
+[12:19:53] indian_pines_random_s1: train=1025 (fit 819) val=206 test=9224
+[12:19:54]     svm best {'C': 1000, 'gamma': 0.001} val_oa=0.806
+[12:19:55]   indian_pines_random_s1 svm: OA=0.7955 AA=0.6555 k=0.7655 F1=0.6656 ECE=0.1157 (3s)
+[12:20:03]     cnn lr=0.001 stopped ep=61 best_val_score=0.942 (8s)
+[12:20:08]     cnn lr=0.003 stopped ep=41 best_val_score=0.951 (5s)
+[12:20:09]   indian_pines_random_s1 cnn3d: OA=0.9308 AA=0.9181 k=0.9209 F1=0.9330 ECE=0.0111 (13s)
+[12:20:09] indian_pines_random_s2: train=1025 (fit 819) val=206 test=9224
+[12:20:10]     svm best {'C': 100, 'gamma': 0.001} val_oa=0.782
+[12:20:11]   indian_pines_random_s2 svm: OA=0.8029 AA=0.6507 k=0.7728 F1=0.6737 ECE=0.1018 (3s)
+[12:20:19]     cnn lr=0.001 stopped ep=58 best_val_score=0.951 (7s)
+[12:20:25]     cnn lr=0.003 stopped ep=52 best_val_score=0.942 (6s)
+[12:20:25]   indian_pines_random_s2 cnn3d: OA=0.9294 AA=0.8906 k=0.9193 F1=0.9145 ECE=0.0121 (14s)
+[12:20:32] indian_pines_spatial_s0: train=4643 (fit 4643) val=1610 test=1832
+[12:20:49]     svm best {'C': 1000, 'gamma': 0.001} val_oa=0.725
+[12:20:53]   indian_pines_spatial_s0 svm: OA=0.5895 AA=0.6843 k=0.5451 F1=0.6604 ECE=0.1340 (21s)
+[12:21:26]     cnn lr=0.001 stopped ep=45 best_val_score=0.695 (32s)
+[12:21:57]     cnn lr=0.003 stopped ep=43 best_val_score=0.715 (31s)
+[12:21:57]   indian_pines_spatial_s0 cnn3d: OA=0.5852 AA=0.6501 k=0.5360 F1=0.6131 ECE=0.3154 (64s)
+[12:22:03] indian_pines_spatial_s1: train=4616 (fit 4616) val=1830 test=1541
+[12:22:20]     svm best {'C': 100, 'gamma': 0.001} val_oa=0.689
+[12:22:23]   indian_pines_spatial_s1 svm: OA=0.6515 AA=0.7184 k=0.6008 F1=0.6643 ECE=0.0855 (20s)
+[12:22:50]     cnn lr=0.001 stopped ep=37 best_val_score=0.669 (26s)
+[12:23:14]     cnn lr=0.003 stopped ep=33 best_val_score=0.655 (24s)
+[12:23:14]   indian_pines_spatial_s1 cnn3d: OA=0.6093 AA=0.5977 k=0.5477 F1=0.5671 ECE=0.2837 (51s)
+[12:23:21] indian_pines_spatial_s2: train=4764 (fit 4764) val=1859 test=1543
+[12:23:40]     svm best {'C': 100, 'gamma': 0.005} val_oa=0.796
+[12:23:44]   indian_pines_spatial_s2 svm: OA=0.6682 AA=0.6440 k=0.5884 F1=0.5345 ECE=0.1400 (23s)
+[12:24:08]     cnn lr=0.001 stopped ep=31 best_val_score=0.768 (24s)
+[12:24:34]     cnn lr=0.003 stopped ep=34 best_val_score=0.774 (26s)
+[12:24:34]   indian_pines_spatial_s2 cnn3d: OA=0.6546 AA=0.6091 k=0.5714 F1=0.5046 ECE=0.2572 (50s)
+[12:24:34] salinas_random_s0: train=5415 (fit 4332) val=1083 test=48714
+[12:24:42]     svm best {'C': 100, 'gamma': 0.02} val_oa=0.946
+[12:24:59]   salinas_random_s0 svm: OA=0.9353 AA=0.9662 k=0.9279 F1=0.9675 ECE=0.0169 (24s)
+[12:25:27]     cnn lr=0.001 stopped ep=42 best_val_score=0.996 (28s)
+[12:26:00]     cnn lr=0.003 stopped ep=49 best_val_score=0.995 (33s)
+[12:26:02]   salinas_random_s0 cnn3d: OA=0.9920 AA=0.9951 k=0.9911 F1=0.9952 ECE=0.0014 (63s)
+[12:26:02] salinas_random_s1: train=5415 (fit 4332) val=1083 test=48714
+[12:26:09]     svm best {'C': 1000, 'gamma': 0.001} val_oa=0.934
+[12:26:25]   salinas_random_s1 svm: OA=0.9316 AA=0.9635 k=0.9237 F1=0.9651 ECE=0.0286 (23s)
+[12:27:03]     cnn lr=0.001 stopped ep=56 best_val_score=0.993 (37s)
+[12:27:28]     cnn lr=0.003 stopped ep=38 best_val_score=0.994 (25s)
+[12:27:30]   salinas_random_s1 cnn3d: OA=0.9894 AA=0.9937 k=0.9883 F1=0.9935 ECE=0.0014 (65s)
+[12:27:30] salinas_random_s2: train=5415 (fit 4332) val=1083 test=48714
+[12:27:38]     svm best {'C': 100, 'gamma': 0.02} val_oa=0.938
+[12:27:55]   salinas_random_s2 svm: OA=0.9357 AA=0.9659 k=0.9283 F1=0.9671 ECE=0.0230 (25s)
+[12:28:32]     cnn lr=0.001 stopped ep=54 best_val_score=0.992 (36s)
+[12:29:01]     cnn lr=0.003 stopped ep=43 best_val_score=0.991 (29s)
+[12:29:03]   salinas_random_s2 cnn3d: OA=0.9907 AA=0.9952 k=0.9897 F1=0.9953 ECE=0.0024 (68s)
+[12:29:38] salinas_spatial_s0: train=25542 (fit 25542) val=8512 test=8896
+[12:30:43]     svm best {'C': 1000, 'gamma': 0.005} val_oa=0.904
+[12:30:52]   salinas_spatial_s0 svm: OA=0.9454 AA=0.9438 k=0.9389 F1=0.9326 ECE=0.0120 (74s)
+[12:32:41]     cnn lr=0.001 stopped ep=28 best_val_score=0.969 (109s)
+[12:34:53]     cnn lr=0.003 stopped ep=33 best_val_score=0.961 (131s)
+[12:34:53]   salinas_spatial_s0 cnn3d: OA=0.9857 AA=0.9826 k=0.9840 F1=0.9786 ECE=0.0057 (242s)
+[12:35:29] salinas_spatial_s1: train=25579 (fit 25579) val=8516 test=8506
+[12:36:27]     svm best {'C': 1000, 'gamma': 0.005} val_oa=0.880
+[12:36:35]   salinas_spatial_s1 svm: OA=0.9263 AA=0.9536 k=0.9200 F1=0.9508 ECE=0.0153 (66s)
+[12:38:30]     cnn lr=0.001 stopped ep=29 best_val_score=0.967 (114s)
+[12:40:26]     cnn lr=0.003 stopped ep=29 best_val_score=0.964 (117s)
+[12:40:27]   salinas_spatial_s1 cnn3d: OA=0.9786 AA=0.9876 k=0.9767 F1=0.9874 ECE=0.0111 (232s)
+[12:41:03] salinas_spatial_s2: train=25795 (fit 25795) val=8539 test=8378
+[12:41:56]     svm best {'C': 1000, 'gamma': 0.02} val_oa=0.894
+[12:42:05]   salinas_spatial_s2 svm: OA=0.9164 AA=0.9485 k=0.9049 F1=0.9481 ECE=0.0166 (62s)
+[12:46:16]     cnn lr=0.001 stopped ep=56 best_val_score=0.954 (250s)
+[12:51:44]     cnn lr=0.003 stopped ep=62 best_val_score=0.947 (328s)
+[12:51:45]   salinas_spatial_s2 cnn3d: OA=0.9420 AA=0.9605 k=0.9340 F1=0.9598 ECE=0.0466 (579s)

@@ -1,0 +1,9 @@
+scene,split,model,oa_mean,oa_std,aa_mean,kappa_mean,macro_f1_mean,ece_mean,n_train_px,n_test_px
+indian_pines,random,svm,0.8011,0.0049,0.6560,0.7714,0.6697,0.1087,1025,9224
+indian_pines,spatial,svm,0.6364,0.0415,0.6822,0.5781,0.6197,0.1198,4674,1639
+indian_pines,spatial,cnn3d,0.6164,0.0352,0.6190,0.5517,0.5616,0.2855,4674,1639
+salinas,spatial,cnn3d,0.9688,0.0235,0.9769,0.9649,0.9753,0.0211,25639,8593
+indian_pines,random,cnn3d,0.9340,0.0067,0.9082,0.9245,0.9273,0.0118,1025,9224
+salinas,random,cnn3d,0.9907,0.0013,0.9947,0.9897,0.9947,0.0017,5415,48714
+salinas,random,svm,0.9342,0.0023,0.9652,0.9266,0.9666,0.0228,5415,48714
+salinas,spatial,svm,0.9294,0.0147,0.9486,0.9213,0.9438,0.0146,25639,8593

@@ -1,0 +1,38 @@
+[12:51:50] ===== 2026-10-25 12:51:50 scripts/train_crop_models.py --splits spatial --block 30 --tag b30 --no_save_models
+[12:51:50] env {'python': '3.12.10', 'platform': 'Windows-11-10.0.26300-SP0', 'numpy': '2.5.4', 'scipy': '1.18.1', 'sklearn': '1.9.1', 'torch': '2.14.1+cpu', 'cpu_threads': 8}
+[12:51:57] indian_pines_spatial_s0_b30: train=4899 (fit 4899) val=746 test=3305
+[12:52:11]     svm best {'C': 1000, 'gamma': 0.001} val_oa=0.552
+[12:52:18]   indian_pines_spatial_s0_b30 svm: OA=0.5129 AA=0.5328 k=0.4575 F1=0.4250 ECE=0.2080 (21s)
+[12:52:45]     cnn lr=0.001 stopped ep=24 best_val_score=0.423 (25s)
+[12:53:06]     cnn lr=0.003 stopped ep=24 best_val_score=0.437 (21s)
+[12:53:07]   indian_pines_spatial_s0_b30 cnn3d: OA=0.5035 AA=0.5538 k=0.4449 F1=0.4546 ECE=0.3663 (49s)
+[12:53:14] indian_pines_spatial_s1_b30: train=3284 (fit 3284) val=1205 test=4567
+[12:53:22]     svm best {'C': 100, 'gamma': 0.005} val_oa=0.496
+[12:53:25]   indian_pines_spatial_s1_b30 svm: OA=0.3994 AA=0.3712 k=0.3264 F1=0.2916 ECE=0.3558 (11s)
+[12:53:48]     cnn lr=0.001 stopped ep=37 best_val_score=0.583 (22s)
+[12:54:06]     cnn lr=0.003 stopped ep=31 best_val_score=0.566 (18s)
+[12:54:06]   indian_pines_spatial_s1_b30 cnn3d: OA=0.3127 AA=0.3468 k=0.2258 F1=0.2618 ECE=0.5923 (41s)
+[12:54:13] indian_pines_spatial_s2_b30: train=4315 (fit 4315) val=1980 test=2588
+[12:54:33]     svm best {'C': 100, 'gamma': 0.005} val_oa=0.518
+[12:54:38]   indian_pines_spatial_s2_b30 svm: OA=0.4737 AA=0.5385 k=0.4178 F1=0.4363 ECE=0.2686 (24s)
+[12:55:06]     cnn lr=0.001 stopped ep=31 best_val_score=0.511 (28s)
+[12:55:29]     cnn lr=0.003 stopped ep=28 best_val_score=0.493 (23s)
+[12:55:29]   indian_pines_spatial_s2_b30 cnn3d: OA=0.4173 AA=0.4763 k=0.3677 F1=0.3989 ECE=0.4810 (52s)
+[12:56:06] salinas_spatial_s0_b30: train=29618 (fit 29618) val=8985 test=9723
+[12:57:06]     svm best {'C': 100, 'gamma': 0.02} val_oa=0.884
+[12:57:14]   salinas_spatial_s0_b30 svm: OA=0.8817 AA=0.9394 k=0.8561 F1=0.9051 ECE=0.0172 (68s)
+[13:01:22]     cnn lr=0.001 stopped ep=50 best_val_score=0.947 (247s)
+[13:07:31]     cnn lr=0.003 stopped ep=75 best_val_score=0.957 (369s)
+[13:07:32]   salinas_spatial_s0_b30 cnn3d: OA=0.9315 AA=0.9496 k=0.9151 F1=0.9485 ECE=0.0492 (618s)
+[13:08:08] salinas_spatial_s1_b30: train=28807 (fit 28807) val=9395 test=10115
+[13:09:11]     svm best {'C': 1000, 'gamma': 0.005} val_oa=0.912
+[13:09:19]   salinas_spatial_s1_b30 svm: OA=0.8716 AA=0.9583 k=0.8506 F1=0.9074 ECE=0.0242 (70s)
+[13:11:36]     cnn lr=0.001 stopped ep=29 best_val_score=0.980 (136s)
+[13:15:47]     cnn lr=0.003 stopped ep=55 best_val_score=0.980 (251s)
+[13:15:48]   salinas_spatial_s1_b30 cnn3d: OA=0.9653 AA=0.9827 k=0.9583 F1=0.9405 ECE=0.0193 (389s)
+[13:16:22] salinas_spatial_s2_b30: train=29914 (fit 29914) val=8914 test=9576
+[13:17:37]     svm best {'C': 10, 'gamma': 0.001} val_oa=0.963
+[13:17:51]   salinas_spatial_s2_b30 svm: OA=0.9175 AA=0.9114 k=0.9068 F1=0.9015 ECE=0.0757 (89s)
+[13:23:18]     cnn lr=0.001 stopped ep=60 best_val_score=0.987 (326s)
+[13:26:03]     cnn lr=0.003 stopped ep=37 best_val_score=0.970 (164s)
+[13:26:03]   salinas_spatial_s2_b30 cnn3d: OA=0.9791 AA=0.9690 k=0.9763 F1=0.9484 ECE=0.0116 (492s)

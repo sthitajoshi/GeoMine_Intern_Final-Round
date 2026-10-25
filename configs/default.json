@@ -1,0 +1,18 @@
+{
+  "seeds": [0, 1, 2],
+  "random_split": {"train_frac": 0.1, "val_frac_of_train": 0.2},
+  "spatial_split": {"block": 15, "buffer": 3, "targets": [0.6, 0.2, 0.2], "n_trials": 1500, "min_class_px": 50},
+  "preprocessing": {"drop_ranges_nm": [], "n_pca_cnn": 30},
+  "svm": {"grid_C": [1, 10, 100, 1000], "grid_gamma": [0.001, 0.005, 0.02], "max_train": 8000},
+  "cnn": {"patch": 7, "grid_lr": [0.001, 0.003], "epochs": 80, "patience": 20, "batch": 128, "dropout": 0.4, "weight_decay": 0.0001},
+  "bands": {"k": 15, "min_sep_nm": 30, "n_repeats": 3},
+  "block_size_study": [15, 20, 30],
+  "mineral": {
+    "cr_window_nm": [2000, 2450],
+    "sam_threshold_rad": 0.10,
+    "min_band_depth": 0.02,
+    "ml_reject_prob": 0.5,
+    "synthetic_n_per_class": 3000,
+    "synthetic_f_min": 0.3
+  }
+}
