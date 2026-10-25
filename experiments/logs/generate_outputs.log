@@ -48,3 +48,37 @@ salinas,spatial,svm,0.9294,0.0147,0.9486,0.9213,0.9438,0.0146,25639,8593
 [13:27:34] band table {'full': {'oa_mean': np.float64(0.6364078355861422), 'oa_std': np.float64(0.041451349984759994), 'aa_mean': np.float64(0.6822318512258957), 'kappa_mean': np.float64(0.5780915997431039), 'macro_f1_mean': np.float64(0.6197233644333319)}, 'selected15': {'oa_mean': np.float64(0.5288569685899058), 'oa_std': np.float64(0.10485825656245212), 'aa_mean': np.float64(0.5999575542865437), 'kappa_mean': np.float64(0.45723478096099984), 'macro_f1_mean': np.float64(0.5475573660130517)}, 'forward15': {'oa_mean': np.float64(0.47322931723060746), 'oa_std': np.float64(0.08376287456451148), 'aa_mean': np.float64(0.5567991996691282), 'kappa_mean': np.float64(0.39542358453562726), 'macro_f1_mean': np.float64(0.48539526968550045)}, 's2': {'oa_mean': np.float64(0.655857795338504), 'oa_std': np.float64(0.03698291005974471), 'aa_mean': np.float64(0.6971304248032181), 'kappa_mean': np.float64(0.5954859545829744), 'macro_f1_mean': np.float64(0.6338442485746874)}, 'random15': {'oa_mean': np.float64(0.5630036409627174), 'oa_std': np.float64(0.041490279492068405), 'aa_mean': np.float64(0.6463277923579192), 'kappa_mean': np.float64(0.4939259625616466), 'macro_f1_mean': np.float64(0.5748475422601275)}}
 block size {'15': {'oa_mean': 0.6364078355861422, 'oa_std': 0.041451349984759994, 'aa_mean': 0.6822318512258957, 'n_train_mean': 4674.333333333333, 'missing_train_classes': [0, 0, 0]}, '20': {'oa_mean': 0.64068782486025, 'oa_std': 0.04463547213850688, 'aa_mean': 0.6083247562973679, 'n_train_mean': 4971.0, 'missing_train_classes': [0, 1, 2]}, '30': {'oa_mean': 0.4619903647434473, 'oa_std': 0.05763914022713817, 'aa_mean': 0.480836135473028, 'n_train_mean': 4166.0, 'missing_train_classes': [3, 4, 3]}}
 [13:27:40] mineral outputs written
+[15:07:03] ===== 2026-10-25 15:07:03 scripts/generate_outputs.py
+[15:07:03] results.csv written:
+scene,split,model,oa_mean,oa_std,aa_mean,kappa_mean,macro_f1_mean,ece_mean,n_train_px,n_test_px
+indian_pines,random,svm,0.8011,0.0049,0.6560,0.7714,0.6697,0.1087,1025,9224
+indian_pines,spatial,svm,0.6364,0.0415,0.6822,0.5781,0.6197,0.1198,4674,1639
+indian_pines,spatial,cnn3d,0.6164,0.0352,0.6190,0.5517,0.5616,0.2855,4674,1639
+salinas,spatial,cnn3d,0.9688,0.0235,0.9769,0.9649,0.9753,0.0211,25639,8593
+indian_pines,random,cnn3d,0.9340,0.0067,0.9082,0.9245,0.9273,0.0118,1025,9224
+salinas,random,cnn3d,0.9907,0.0013,0.9947,0.9897,0.9947,0.0017,5415,48714
+salinas,random,svm,0.9342,0.0023,0.9652,0.9266,0.9666,0.0228,5415,48714
+salinas,spatial,svm,0.9294,0.0147,0.9486,0.9213,0.9438,0.0146,8000,8593
+
+[15:07:18] indian_pines maps written
+[15:08:15] salinas maps written
+[15:08:16] band table {'full': {'oa_mean': np.float64(0.6364078355861422), 'oa_std': np.float64(0.041451349984759994), 'aa_mean': np.float64(0.6822318512258957), 'kappa_mean': np.float64(0.5780915997431039), 'macro_f1_mean': np.float64(0.6197233644333319)}, 'selected15': {'oa_mean': np.float64(0.5288569685899058), 'oa_std': np.float64(0.10485825656245212), 'aa_mean': np.float64(0.5999575542865437), 'kappa_mean': np.float64(0.45723478096099984), 'macro_f1_mean': np.float64(0.5475573660130517)}, 'forward15': {'oa_mean': np.float64(0.47322931723060746), 'oa_std': np.float64(0.08376287456451148), 'aa_mean': np.float64(0.5567991996691282), 'kappa_mean': np.float64(0.39542358453562726), 'macro_f1_mean': np.float64(0.48539526968550045)}, 's2': {'oa_mean': np.float64(0.655857795338504), 'oa_std': np.float64(0.03698291005974471), 'aa_mean': np.float64(0.6971304248032181), 'kappa_mean': np.float64(0.5954859545829744), 'macro_f1_mean': np.float64(0.6338442485746874)}, 'random15': {'oa_mean': np.float64(0.5630036409627174), 'oa_std': np.float64(0.041490279492068405), 'aa_mean': np.float64(0.6463277923579192), 'kappa_mean': np.float64(0.4939259625616466), 'macro_f1_mean': np.float64(0.5748475422601275)}}
+block size {'15': {'oa_mean': 0.6364078355861422, 'oa_std': 0.041451349984759994, 'aa_mean': 0.6822318512258957, 'n_train_mean': 4674.333333333333, 'missing_train_classes': [0, 0, 0]}, '20': {'oa_mean': 0.64068782486025, 'oa_std': 0.04463547213850688, 'aa_mean': 0.6083247562973679, 'n_train_mean': 4971.0, 'missing_train_classes': [0, 1, 2]}, '30': {'oa_mean': 0.4619903647434473, 'oa_std': 0.05763914022713817, 'aa_mean': 0.480836135473028, 'n_train_mean': 4166.0, 'missing_train_classes': [3, 4, 3]}}
+[15:08:25] mineral outputs written
+[15:21:59] ===== 2026-10-25 15:21:59 scripts/generate_outputs.py
+[15:21:59] results.csv written:
+scene,split,model,oa_mean,oa_std,aa_mean,kappa_mean,macro_f1_mean,ece_mean,n_train_px,n_test_px
+indian_pines,random,svm,0.8011,0.0049,0.6560,0.7714,0.6697,0.1087,1025,9224
+indian_pines,spatial,svm,0.6364,0.0415,0.6822,0.5781,0.6197,0.1198,4674,1639
+indian_pines,spatial,cnn3d,0.6164,0.0352,0.6190,0.5517,0.5616,0.2855,4674,1639
+salinas,spatial,cnn3d,0.9688,0.0235,0.9769,0.9649,0.9753,0.0211,25639,8593
+indian_pines,random,cnn3d,0.9340,0.0067,0.9082,0.9245,0.9273,0.0118,1025,9224
+salinas,random,cnn3d,0.9907,0.0013,0.9947,0.9897,0.9947,0.0017,5415,48714
+salinas,random,svm,0.9342,0.0023,0.9652,0.9266,0.9666,0.0228,5415,48714
+salinas,spatial,svm,0.9294,0.0147,0.9486,0.9213,0.9438,0.0146,8000,8593
+
+[15:22:13] indian_pines maps written
+[15:22:58] salinas maps written
+[15:22:58] band table {'full': {'oa_mean': np.float64(0.6364078355861422), 'oa_std': np.float64(0.041451349984759994), 'aa_mean': np.float64(0.6822318512258957), 'kappa_mean': np.float64(0.5780915997431039), 'macro_f1_mean': np.float64(0.6197233644333319)}, 'selected15': {'oa_mean': np.float64(0.5288569685899058), 'oa_std': np.float64(0.10485825656245212), 'aa_mean': np.float64(0.5999575542865437), 'kappa_mean': np.float64(0.45723478096099984), 'macro_f1_mean': np.float64(0.5475573660130517)}, 'forward15': {'oa_mean': np.float64(0.47322931723060746), 'oa_std': np.float64(0.08376287456451148), 'aa_mean': np.float64(0.5567991996691282), 'kappa_mean': np.float64(0.39542358453562726), 'macro_f1_mean': np.float64(0.48539526968550045)}, 's2': {'oa_mean': np.float64(0.655857795338504), 'oa_std': np.float64(0.03698291005974471), 'aa_mean': np.float64(0.6971304248032181), 'kappa_mean': np.float64(0.5954859545829744), 'macro_f1_mean': np.float64(0.6338442485746874)}, 'random15': {'oa_mean': np.float64(0.5630036409627174), 'oa_std': np.float64(0.041490279492068405), 'aa_mean': np.float64(0.6463277923579192), 'kappa_mean': np.float64(0.4939259625616466), 'macro_f1_mean': np.float64(0.5748475422601275)}}
+block size {'15': {'oa_mean': 0.6364078355861422, 'oa_std': 0.041451349984759994, 'aa_mean': 0.6822318512258957, 'n_train_mean': 4674.333333333333, 'missing_train_classes': [0, 0, 0]}, '20': {'oa_mean': 0.64068782486025, 'oa_std': 0.04463547213850688, 'aa_mean': 0.6083247562973679, 'n_train_mean': 4971.0, 'missing_train_classes': [0, 1, 2]}, '30': {'oa_mean': 0.4619903647434473, 'oa_std': 0.05763914022713817, 'aa_mean': 0.480836135473028, 'n_train_mean': 4166.0, 'missing_train_classes': [3, 4, 3]}}
+[15:23:06] mineral outputs written

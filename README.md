@@ -101,7 +101,7 @@ The `.mat` files carry no wavelengths. Each scene's centres come from a differen
 
 * **Library.** Native splib07a spectra are convolved with Gaussian SRFs (FWHM = channel spacing) to the adopted band centres. The result is cross-checked against USGS's own AVIRIS-1998 convolution: RMS difference ≤ 0.006 reflectance in the SWIR (`outputs/figures/library_convolution_check.png`).
 * **Continuum removal.** Upper convex hull over 2.00–2.45 µm on usable bands. Band depth and position are computed at each mineral's diagnostic feature.
-* **SAM** runs on absorption vectors (1 − CR), with a minimum band depth of 0.02 (≈5× the estimated noise σ). The angle threshold comes from labelled *synthetic* spectra, never the real scene. Unknown/none is kept as a class. Feature-fit residuals give a relative-abundance proxy and a residual map.
+* **SAM** runs on absorption vectors (1 − CR), with a minimum band depth of 0.02. That is only ~1–2× the noise in CR units (σ ≈ 0.004 reflectance ÷ ~0.3 continuum), so it is a weak gate; at the chosen angle it changes nothing (sensitivity table in `mineral_results.json`). The angle threshold comes from labelled *synthetic* spectra, never the real scene. Unknown/none is kept as a class. Feature-fit residuals give a relative-abundance proxy and a residual map.
 * **ML.** An MLP is trained only on synthetic mixtures of library spectra:
   * linear plus Hapke-style intimate mixing;
   * illumination ×0.6–1.4 plus an offset;
@@ -153,9 +153,13 @@ The `.mat` files carry no wavelengths. Each scene's centres come from a differen
 | 2 | Technical report (5 pages + appendix) | `reports/technical_report.pdf` (built by `scripts/make_report.py`) |
 | 3 | `results.csv` | repo root (exact challenge column order; 4 required rows first, then 4 extra rows) |
 | 4 | Class / confidence / mineral maps with legends | `outputs/class_maps`, `outputs/confidence_maps`, `outputs/mineral_maps`, `outputs/index_maps` |
-| 5 | Demo video (~3 min, captions, no voice) | recorded with `scripts/record_demo.py` to `outputs/demo/demo.webm` (git-ignored, 44 MB; upload separately); step screenshots in `outputs/demo/` |
+| 5 | Demo video (1 min 49 s, captions, no voice) | `outputs/demo/demo.mp4` (2 MB, committed), recorded with `scripts/record_demo.py`; step screenshots in `outputs/demo/` |
 
-## 8. Limitations and AI-assistance disclosure
+## 8. Audit
+
+`reports/final_audit.md` gives a requirement-by-requirement PASS/FAIL/BLOCKED status with evidence. `python scripts/audit_checks.py` re-derives the metrics from the confusion matrices, re-aggregates `results.csv` from the per-seed runs, and re-verifies every saved split.
+
+## 9. Limitations and AI-assistance disclosure
 
 See `results.csv`, `outputs/reports/` and the technical report `reports/technical_report.pdf`. The report covers results, the random-vs-spatial gap, band importance, mineral validation and limitations.
 

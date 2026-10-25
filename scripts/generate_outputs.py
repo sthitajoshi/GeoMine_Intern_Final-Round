@@ -39,6 +39,12 @@ def load_runs():
     return runs
 
 
+def n_fit(r):
+    """Pixels the model was actually fitted on: the SVM may be capped (max_train) below the split's
+    training-pixel count; everything else uses the full training split."""
+    return int(r.get("n_svm_fit_px") or r["n_train_px"])
+
+
 def write_results(runs, log):
     keys = REQUIRED + sorted(k for k in runs if k not in REQUIRED)
     rows, ext, per_seed = [], [], []
@@ -53,7 +59,7 @@ def write_results(runs, log):
                      "oa_mean": f"{m['oa'].mean():.4f}", "oa_std": f"{m['oa'].std(ddof=1):.4f}",
                      "aa_mean": f"{m['aa'].mean():.4f}", "kappa_mean": f"{m['kappa'].mean():.4f}",
                      "macro_f1_mean": f"{m['macro_f1'].mean():.4f}", "ece_mean": f"{m['ece'].mean():.4f}",
-                     "n_train_px": int(round(np.mean([r["n_train_px"] for r in rs]))),
+                     "n_train_px": int(round(np.mean([n_fit(r) for r in rs]))),
                      "n_test_px": int(round(np.mean([r["n_test_px"] for r in rs])))})
         e = {"scene": k[0], "split": k[1], "model": k[2]}
         for n, v in m.items():
@@ -63,14 +69,15 @@ def write_results(runs, log):
             e["ece_temp_scaled_mean"], e["ece_temp_scaled_std"] = round(float(ec.mean()), 4), round(float(ec.std(ddof=1)), 4)
         e["train_time_s_mean"] = round(float(np.mean([r["train_time_s"] for r in rs])), 1)
         e["inference_time_s_mean"] = round(float(np.mean([r["inference_time_s"] for r in rs])), 2)
-        e["n_train_px_per_seed"] = [r["n_train_px"] for r in rs]
+        e["n_train_px_per_seed"] = [n_fit(r) for r in rs]
+        e["n_train_split_px_per_seed"] = [r["n_train_px"] for r in rs]
         e["n_test_px_per_seed"] = [r["n_test_px"] for r in rs]
         e["hyperparams_per_seed"] = [r["hyperparams"] for r in rs]
         ext.append(e)
         for r in rs:
             per_seed.append({"scene": k[0], "split": k[1], "model": k[2], "seed": r["seed"],
                              **{n: round(r["metrics"][n], 4) for n in ("oa", "aa", "kappa", "macro_f1", "ece")},
-                             "n_train_px": r["n_train_px"], "n_test_px": r["n_test_px"],
+                             "n_train_px": n_fit(r), "n_train_split_px": r["n_train_px"], "n_test_px": r["n_test_px"],
                              "hyperparams": json.dumps(r["hyperparams"])})
     with open(ROOT / "results.csv", "w", newline="") as f:
         w = csv.DictWriter(f, COLS)
@@ -312,6 +319,18 @@ def mineral_outputs(log):
         fig.colorbar(im, ax=ax, fraction=0.04)
     fig.tight_layout()
     fig.savefig(md / "cuprite_band_depth_maps.png", dpi=120)
+    plt.close(fig)
+    fig, axs = plt.subplots(2, 3, figsize=(13, 8))
+    fe = __import__("src.continuum_removal", fromlist=["FEATURES"]).FEATURES
+    for ax, m in zip(axs.flat, TARGETS):
+        c, h = fe[m]
+        v = np.where(z[f"depth_{m}"] >= 0.03, z[f"pos_{m}"], np.nan)   # position is meaningless without a feature
+        im = ax.imshow(v, cmap="coolwarm", vmin=c - h, vmax=c + h)
+        ax.set_title(f"{m}: minimum position (nm), depth >= 0.03", fontsize=9)
+        ax.set_xticks([]), ax.set_yticks([])
+        fig.colorbar(im, ax=ax, fraction=0.04)
+    fig.tight_layout()
+    fig.savefig(md / "cuprite_band_position_maps.png", dpi=120)
     plt.close(fig)
     for m in TARGETS:
         vz.save_map_png(md / f"cuprite_band_depth_{m}.png", vz.scalar_rgb(z[f"depth_{m}"], "inferno", 0, 0.25),

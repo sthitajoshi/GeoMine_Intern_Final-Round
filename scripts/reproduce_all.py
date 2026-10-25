@@ -40,6 +40,7 @@ def main():
     run(["scripts/generate_outputs.py"])
     run(["scripts/gap_analysis.py"])
     run(["scripts/make_report.py"])
+    run(["scripts/audit_checks.py"])
     run(["-m", "pytest", "-q", "tests"])
     print(f"\nAll done in {(time.time() - t0) / 60:.1f} min")
 

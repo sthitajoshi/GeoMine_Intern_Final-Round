@@ -315,7 +315,13 @@ def main():
         "Hyper-parameter grids are small. The Cuprite wavelengths are a proxy, the library has a single sample for most "
         "minerals (grain size, crystallinity and solid-solution variation are not covered), and SAM threshold choice is "
         "only as good as the synthetic data. There is no field truth for Cuprite, so mineral 'accuracy' remains unknown. "
-        "Maps are not georeferenced because the .mat files carry no geo-metadata.", B))
+        "Maps are not georeferenced because the .mat files carry no geo-metadata. "
+        "<b>Analysis choices made after seeing results</b> (disclosed for transparency): (i) the CNN checkpoint rule was "
+        "changed from validation loss to validation OA after a seed-0 trial run whose test OA we had seen (the validation "
+        "curve, which stopped at epoch 2, motivated it, but the test number was visible); (ii) the SAM threshold rule was "
+        "changed to the 95 % knee after inspecting real-scene class counts (no labels involved); (iii) forward selection "
+        "was added after the importance-based 15-band result was seen; both are reported. The default band set was "
+        "<i>not</i> changed after an ablation dropping the near-water bands (IP SVM OA 0.648 vs 0.636, within seed sd).", B))
     S.append(Paragraph("9. With two more weeks", H1))
     S.append(Paragraph(
         "(1) Field-level splits: segment fields from the GT and assign whole fields, and a metre-based block for Salinas; "

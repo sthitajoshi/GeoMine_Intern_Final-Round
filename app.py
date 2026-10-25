@@ -126,11 +126,12 @@ else:
         mlab = live
     legend = [(m, vz.matplotlib.colors.to_rgb(vz.MINERAL_COLOURS[m])) for m in TARGETS] + [("unknown / none", (0.85,) * 3)]
     layers["Mineral map"] = vz.mineral_rgb(mlab, TARGETS)
-    if method.startswith("SAM"):
-        q = np.where(z["lab_sam"] >= 0, 1 - z["sam_angle"] / res["sam_threshold_rad"], np.nan)
-        layers["Confidence"] = vz.scalar_rgb(q, "viridis", 0, 1)
-    else:
-        layers["Confidence"] = vz.scalar_rgb(z["ml_conf"], "magma", 0, 1)
+    if method.startswith("SAM"):   # match quality = 1 - angle / threshold, mapped pixels only
+        conf_raw = np.where(z["lab_sam"] >= 0, 1 - z["sam_angle"] / res["sam_threshold_rad"], np.nan)
+        layers["Confidence"] = vz.scalar_rgb(conf_raw, "viridis", 0, 1)
+    else:                          # MLP max probability (not calibrated on real data)
+        conf_raw = z["ml_conf"]
+        layers["Confidence"] = vz.scalar_rgb(conf_raw, "magma", 0, 1)
     dm = st.sidebar.selectbox("Band-depth layer", TARGETS)
     layers["Index"] = vz.scalar_rgb(z[f"depth_{dm}"], "inferno", 0, 0.25)
 
@@ -143,6 +144,8 @@ for name in order:
     on[name] = st.sidebar.checkbox(name, default, key=f"on_{name}")
     alpha[name] = st.sidebar.slider(f"{name} opacity", 0.0, 1.0, 0.7 if default else 0.6, 0.05, key=f"a_{name}")
 
+valid_px = {"Index": np.isfinite(iv) if is_crop else np.isfinite(z[f"depth_{dm}"]),
+            "Confidence": np.ones((H, W), bool) if is_crop else np.isfinite(conf_raw)}
 img = base.copy() if show_base else np.zeros_like(base)
 for name in order:
     if on[name]:
@@ -151,6 +154,8 @@ for name in order:
             mask = mlab >= 0 if show_base else None
         if name == "Ground truth":
             mask = scene.gt > 0
+        if name in ("Index", "Confidence"):   # leave undefined (NaN) pixels transparent, not black
+            mask = valid_px[name]
         img = blend(img, layers[name], alpha[name], mask)
 
 # ----------------------------------------------------------------------------- main panel

@@ -8,4 +8,5 @@ experiments/logs/*.out
 *.tmp
 .streamlit/secrets.toml
 outputs/demo/*.webm
+!outputs/demo/demo.mp4
 .claude/

@@ -1,0 +1,254 @@
+{
+ "metrics_recomputed_from_confusion": {
+  "pass": true,
+  "detail": {
+   "runs_checked": 42,
+   "max_abs_diff": 1.1102230246251565e-16
+  }
+ },
+ "results_csv_header_exact": {
+  "pass": true,
+  "detail": [
+   "scene",
+   "split",
+   "model",
+   "oa_mean",
+   "oa_std",
+   "aa_mean",
+   "kappa_mean",
+   "macro_f1_mean",
+   "ece_mean",
+   "n_train_px",
+   "n_test_px"
+  ]
+ },
+ "results_csv_matches_three_seed_runs": {
+  "pass": true,
+  "detail": {
+   "rows": 8,
+   "mismatches": []
+  }
+ },
+ "results_csv_required_rows": {
+  "pass": true,
+  "detail": [
+   [
+    "indian_pines",
+    "random",
+    "svm"
+   ],
+   [
+    "indian_pines",
+    "spatial",
+    "cnn3d"
+   ],
+   [
+    "indian_pines",
+    "spatial",
+    "svm"
+   ],
+   [
+    "salinas",
+    "spatial",
+    "cnn3d"
+   ]
+  ]
+ },
+ "all_saved_splits_verified": {
+  "pass": true,
+  "detail": {
+   "indian_pines_random_s0": "random: stratified 10% verified",
+   "indian_pines_random_s1": "random: stratified 10% verified",
+   "indian_pines_random_s2": "random: stratified 10% verified",
+   "indian_pines_spatial_s0": {
+    "frac_train": 0.574,
+    "frac_val": 0.199,
+    "frac_test": 0.227
+   },
+   "indian_pines_spatial_s0_b30": {
+    "frac_train": 0.547,
+    "frac_val": 0.083,
+    "frac_test": 0.369
+   },
+   "indian_pines_spatial_s0_nowater": {
+    "frac_train": 0.574,
+    "frac_val": 0.199,
+    "frac_test": 0.227
+   },
+   "indian_pines_spatial_s1": {
+    "frac_train": 0.578,
+    "frac_val": 0.229,
+    "frac_test": 0.193
+   },
+   "indian_pines_spatial_s1_b30": {
+    "frac_train": 0.363,
+    "frac_val": 0.133,
+    "frac_test": 0.504
+   },
+   "indian_pines_spatial_s1_nowater": {
+    "frac_train": 0.578,
+    "frac_val": 0.229,
+    "frac_test": 0.193
+   },
+   "indian_pines_spatial_s2": {
+    "frac_train": 0.583,
+    "frac_val": 0.228,
+    "frac_test": 0.189
+   },
+   "indian_pines_spatial_s2_b30": {
+    "frac_train": 0.486,
+    "frac_val": 0.223,
+    "frac_test": 0.291
+   },
+   "indian_pines_spatial_s2_nowater": {
+    "frac_train": 0.583,
+    "frac_val": 0.228,
+    "frac_test": 0.189
+   },
+   "salinas_random_s0": "random: stratified 10% verified",
+   "salinas_random_s1": "random: stratified 10% verified",
+   "salinas_random_s2": "random: stratified 10% verified",
+   "salinas_spatial_s0": {
+    "frac_train": 0.595,
+    "frac_val": 0.198,
+    "frac_test": 0.207
+   },
+   "salinas_spatial_s0_b30": {
+    "frac_train": 0.613,
+    "frac_val": 0.186,
+    "frac_test": 0.201
+   },
+   "salinas_spatial_s0_nowater": {
+    "frac_train": 0.595,
+    "frac_val": 0.198,
+    "frac_test": 0.207
+   },
+   "salinas_spatial_s1": {
+    "frac_train": 0.6,
+    "frac_val": 0.2,
+    "frac_test": 0.2
+   },
+   "salinas_spatial_s1_b30": {
+    "frac_train": 0.596,
+    "frac_val": 0.194,
+    "frac_test": 0.209
+   },
+   "salinas_spatial_s1_nowater": {
+    "frac_train": 0.6,
+    "frac_val": 0.2,
+    "frac_test": 0.2
+   },
+   "salinas_spatial_s2": {
+    "frac_train": 0.604,
+    "frac_val": 0.2,
+    "frac_test": 0.196
+   },
+   "salinas_spatial_s2_b30": {
+    "frac_train": 0.618,
+    "frac_val": 0.184,
+    "frac_test": 0.198
+   },
+   "salinas_spatial_s2_nowater": {
+    "frac_train": 0.604,
+    "frac_val": 0.2,
+    "frac_test": 0.196
+   }
+  }
+ },
+ "spatial_proportions_within_0.10_of_60_20_20": {
+  "pass": true,
+  "detail": {
+   "max_deviation": 0.029
+  }
+ },
+ "removed_bands_are_water_bands": {
+  "pass": true,
+  "detail": {
+   "ip_removed_nm": [
+    1363.0,
+    1373.0,
+    1383.0,
+    1392.0,
+    1402.0,
+    1819.0,
+    1829.0,
+    1839.0,
+    1849.0,
+    1859.0,
+    1869.0,
+    1878.0,
+    1888.0,
+    1883.0,
+    1893.0,
+    1903.0,
+    1913.0,
+    1923.0,
+    1933.0,
+    2499.0
+   ],
+   "salinas_removed_nm": [
+    1365.0,
+    1375.0,
+    1385.0,
+    1395.0,
+    1405.0,
+    1823.0,
+    1833.0,
+    1842.0,
+    1852.0,
+    1862.0,
+    1872.0,
+    1882.0,
+    1878.0,
+    1888.0,
+    1898.0,
+    1908.0,
+    1918.0,
+    1928.0,
+    1938.0,
+    2507.0
+   ]
+  }
+ },
+ "cuprite_zeroed_bands_fall_in_water_windows_of_proxy_table": {
+  "pass": true,
+  "detail": [
+   369.0,
+   379.0,
+   389.0,
+   1365.0,
+   1375.0,
+   1385.0,
+   1395.0,
+   1833.0,
+   1842.0,
+   1852.0,
+   1862.0,
+   1872.0,
+   1882.0,
+   1878.0,
+   1888.0,
+   1898.0,
+   1908.0,
+   1918.0,
+   1928.0
+  ]
+ },
+ "required_artefacts_present": {
+  "pass": true,
+  "detail": {
+   "missing": []
+  }
+ },
+ "report_body_le_6_pages": {
+  "pass": true,
+  "detail": {
+   "total_pages": 11,
+   "body_pages": 5
+  }
+ },
+ "demo_video_local": {
+  "pass": true,
+  "detail": "27.7 MB"
+ }
+}
