@@ -233,16 +233,22 @@ def crop_maps(scene_name, log):
         if model == "cnn3d":
             crop_ids = [i for i, n in enumerate(scene.class_names) if n in scene.crop_classes]
             crop_mask = np.isin(lab, crop_ids)
+    index_formulas = {}
     for name, fn, cmap_, vr in [("ndvi", indices.ndvi, "RdYlGn", (-0.1, 0.9)), ("ndre", indices.ndre, "RdYlGn", (-0.05, 0.6)),
                                 ("red_edge_position", indices.red_edge_position, "viridis", (700, 740))]:
         v = fn(scene.cube, scene.centres)
+        formula = indices.describe(name, scene.centres)
         vz.save_map_png(idir / f"{scene_name}_{name}_all.png", vz.scalar_rgb(v, cmap_, *vr),
-                        f"{scene_name}: {name.upper()} (all pixels)", cbar=(cmap_, *vr, name))
+                        f"{scene_name}: {name.upper()} (all pixels)", cbar=(cmap_, *vr, name),
+                        note=f"{formula} (R<nm> = band centred at that wavelength). At-sensor values: relative, not absolute.")
         vm = np.where(crop_mask, v, np.nan)
         vz.save_map_png(idir / f"{scene_name}_{name}_crop_classes.png", vz.scalar_rgb(vm, cmap_, *vr),
                         f"{scene_name}: {name.upper()} on pixels predicted as crop classes", cbar=(cmap_, *vr, name),
-                        note="Masked with the CNN3D class map (crop classes only). At-sensor values: relative, not absolute.")
+                        note=f"{formula} (R<nm> = band centred at that wavelength).\n"
+                             "Masked with the CNN3D class map (crop classes only). At-sensor values: relative, not absolute.")
+        index_formulas[name] = formula
         np.save(idir / f"{scene_name}_{name}.npy", v.astype(np.float32))
+    summary["index_formulas"] = index_formulas
     log(f"{scene_name} maps written")
     return summary
 

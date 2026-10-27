@@ -43,6 +43,11 @@
     3071,
     171
    ]
+  },
+  "index_formulas": {
+   "ndvi": "NDVI = (R802.5 - R666.6) / (R802.5 + R666.6)",
+   "ndre": "NDRE = (R792.9 - R715.8) / (R792.9 + R715.8)",
+   "red_edge_position": "REP = 696.5 + (744.7 - 696.5) x (Rre - R696.5) / (R744.7 - R696.5), Rre = (R666.6 + R783.3) / 2  [linear 4-point method]"
   }
  },
  "salinas": {
@@ -89,6 +94,11 @@
     8719,
     3604
    ]
+  },
+  "index_formulas": {
+   "ndvi": "NDVI = (R798.1 - R673.4) / (R798.1 + R673.4)",
+   "ndre": "NDRE = (R788.5 - R721.3) / (R788.5 + R721.3)",
+   "red_edge_position": "REP = 702.1 + (740.5 - 702.1) x (Rre - R702.1) / (R740.5 - R702.1), Rre = (R673.4 + R778.9) / 2  [linear 4-point method]"
   }
  }
 }

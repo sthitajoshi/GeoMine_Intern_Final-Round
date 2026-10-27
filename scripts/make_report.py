@@ -249,6 +249,13 @@ def main():
         + ", ".join(f"{r['class']} ({float(r['f1_mean']):.2f})" for r in w2) +
         ": Grapes_untrained vs Vinyard_untrained are both trellised vines on bare soil, separable mainly by context; "
         "(5) the crop/non-crop mask for index maps had to be redefined because the class sets differ.", B))
+    msum = J(OUT / "reports" / "map_summary.json")
+    S.append(Paragraph(
+        "<b>Index maps.</b> Each index uses the AVIRIS band whose centre is nearest the nominal wavelength; R&lt;nm&gt; is "
+        "that band's value. Indian Pines: " + "; ".join(msum["indian_pines"]["index_formulas"].values()) +
+        ". Salinas: " + "; ".join(msum["salinas"]["index_formulas"].values()) +
+        ". The crop-class maps mask pixels not predicted as crop classes by the CNN3D class map. Inputs are at-sensor "
+        "values, not surface reflectance, so index values are relative between fields, not absolute.", B))
 
     # ------------------------------------------------------------------ 7 minerals
     S.append(Paragraph("7. Mineral mapping and its validation (Cuprite)", H1))
@@ -354,7 +361,7 @@ def main():
     S.append(Paragraph("A3. Maps (full set in outputs/).", B))
     for f, cap in [("class_maps/indian_pines_cnn3d_class_map.png", "Indian Pines CNN3D class map."),
                    ("confidence_maps/indian_pines_cnn3d_confidence.png", "Indian Pines CNN3D confidence (temperature-scaled)."),
-                   ("index_maps/indian_pines_ndre_crop_classes.png", "Indian Pines NDRE on predicted crop classes."),
+                   ("index_maps/indian_pines_ndre_crop_classes.png", "Indian Pines NDRE on predicted crop classes: " + J(OUT / "reports" / "map_summary.json")["indian_pines"]["index_formulas"]["ndre"] + "."),
                    ("class_maps/salinas_cnn3d_class_map.png", "Salinas CNN3D class map."),
                    ("mineral_maps/cuprite_band_depth_maps.png", "Cuprite diagnostic band-depth maps."),
                    ("confidence_maps/cuprite_sam_match_quality.png", "Cuprite SAM match quality.")]:

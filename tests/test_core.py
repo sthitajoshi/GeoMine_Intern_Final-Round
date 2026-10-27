@@ -296,3 +296,14 @@ def test_results_csv_schema():
     for r in rows[1:]:
         assert all(v != "" for v in r), r
         assert 0 <= float(r[3]) <= 1
+
+
+def test_index_formula_uses_actual_band_centres():
+    from src import indices
+    centres = np.array([666.6, 696.5, 715.8, 744.7, 783.3, 792.9, 802.5])
+    assert indices.describe("ndvi", centres) == "NDVI = (R802.5 - R666.6) / (R802.5 + R666.6)"
+    assert indices.describe("ndre", centres) == "NDRE = (R792.9 - R715.8) / (R792.9 + R715.8)"
+    cube = np.ones((2, 2, 7))
+    cube[..., 1], cube[..., 3] = 0.2, 0.6            # R700 = 0.2, R740 = 0.6, Rre = (1 + 1) / 2 = 1 -> clipped
+    cube[..., 0], cube[..., 4] = 0.2, 0.6            # Rre = 0.4 -> halfway between the two centres
+    assert np.allclose(indices.red_edge_position(cube, centres), (696.5 + 744.7) / 2)

@@ -60,7 +60,11 @@ def save_map_png(path, img, title, legend: list[tuple[str, tuple]] | None = None
         sm = plt.cm.ScalarMappable(cmap=cm_, norm=plt.Normalize(vmin, vmax))
         fig.colorbar(sm, ax=ax, fraction=0.046, pad=0.02, label=label)
     if note:
+        import textwrap   # wrap to the figure width (~20 characters per inch at 6 pt)
+        note = "\n".join(textwrap.fill(line, int(fig.get_figwidth() * 20)) for line in note.split("\n"))
         fig.text(0.01, 0.01, note, fontsize=6, color="0.3")
-    fig.tight_layout()
+    # keep the map clear of the footnote: ~0.13 in of figure height per note line
+    bottom = 0.13 * (note.count("\n") + 1) / fig.get_figheight() + 0.01 if note else 0
+    fig.tight_layout(rect=(0, bottom, 1, 1))
     fig.savefig(path, dpi=130)
     plt.close(fig)
